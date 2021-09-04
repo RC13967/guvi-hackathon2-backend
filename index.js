@@ -8,8 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const PORT = process.env.PORT;
-  const MONGO_URL = "mongodb://localhost";
-  // const MONGO_URL = process.env.MONGO_URL;
+  const MONGO_URL = process.env.MONGO_URL;
 async function genPassword(password){
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
@@ -22,7 +21,7 @@ function createconnection(){
 }
     app.get("/movies", async (request, response)=>{
       const client = await createconnection();
-      const result = await client.db("hack2").collection("movies").find({}).limit(20).toArray();
+      const result = await client.db("hack2").collection("movies").find({}).toArray();
        response.send(result);
 });
 app.get("/users/:username", async (request, response)=>{
