@@ -65,8 +65,3 @@ return user;
     
     
 app.listen(PORT, ()=> console.log("The server is started"));
-
-
-
-
-
