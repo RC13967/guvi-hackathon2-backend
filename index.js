@@ -150,7 +150,7 @@ app.put("/addMovie", async (request, response) => {
               poster: details.poster,
               overview: details.overview,
               release_date: details.release_date,
-              genres: details.genres,
+              genres: [details.genres],
               showTimes:dates.map((date)=>({"date":date,
               "showTimes":times.map((time)=>({"time":time, "bookingDetails":[]}))
             }))
