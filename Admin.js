@@ -111,7 +111,7 @@ router1.post("/forgotAdmin", async (request, response) => {
       from: 'ranjithch137@gmail.com',
       to: email,
       subject: 'Reset Password link',
-      html: '<a href = "https://guvi-hackathon2-ranjith.netlify.app//retrieveAdmin/' + email + '/' + token + '"> Reset Password Link</a>'
+      html: '<a href = "https://guvi-hackathon2-ranjith.netlify.app/retrieveAdmin/' + email + '/' + token + '"> Reset Password Link</a>'
     };
     transporter.sendMail(mailOptions, async function (err, data) {
       if (err) {
